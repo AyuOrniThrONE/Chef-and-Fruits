@@ -9,27 +9,15 @@ public class ChefNDfruits {
                 int n=sc.nextInt();
                 int m=sc.nextInt();
                 int k=sc.nextInt();
-                int diff=0;
-                int instance=0;
+                int ans=Math.abs(n-m);
+
                 if (1<=n && n<=100 && 1<=m && m<=100 && 1<=k && k<=100) {
-                    if (n>m) {
-                        if (k==n || k==m) {
-                            diff=0;
-                        }else{
-                        instance=n-k;
-                        diff=instance-m;
-                        }
-                    }
-                    else if(m>n){
-                        if (k==n || k==m) {
-                            diff=0;
-                        }else{
-                        instance=m-k;
-                        diff= instance-n;
-                        }
-                    }
+                    ans-=k;
+                    if (ans<=0) {
+                        ans=0;
+                    }    
                 }
-                System.out.println(diff);
+                System.out.println(ans);
             }
 
         }
